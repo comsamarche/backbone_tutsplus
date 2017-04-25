@@ -1,0 +1,84 @@
+body, html{
+	width: 100%;
+}
+
+.contacts,
+.contacts-list{
+	display: flex;
+	flex-wrap:wrap;
+	width: 100%;
+}
+
+.contacts header,
+.contacts-list{
+	width: 100%;
+}
+.contact-container{
+	position: relative;
+	width: 100%;
+	border: 1px solid #999;
+	padding: 10px;
+	border-radius: 5px;
+}
+.contact-container::after{
+	content:"";
+	display: table;
+	clear: both;
+}
+
+.contact-container img{ 
+	float:left; 
+	display: block;
+	width: calc( 50% - 10px); 
+	padding-right: 10px;
+	max-height: 150px;
+	max-width: 150px;
+}
+.contact-container h1{ 
+	display: block;	
+	width: 50%;
+	float:left; 
+ }
+.contact-container h1 span{
+	position: absolute;
+	top: 10px; right: 10px;
+	font-size: 10px; 
+}
+
+
+#addContact{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 15px 0;
+	background-color: #999;
+	transition:height .3s ease-in-out;
+/*	transform-origin: 0 0 0;
+	transform:scaleY(0);*/
+	overflow: hidden;
+	height: 0;
+	min-height: 0;
+}
+#addContact *{ transition:opacity .6s ease-in-out .3s; opacity: 0; }
+#addContact.visible{
+	height: 200px;
+}
+#addContact.visible *{
+	opacity: 1;
+}
+
+#addContact label,
+#addContact input{ display: block; margin: 5px 0;}
+#addContact label{ width: 40%; }
+#addContact input{ width: 50%; }
+#addContact button,
+.button{
+	display: block; margin: 5px 0; padding: 10px;
+	align-self: flex-end;
+	background-color: #555; color:#FFF;
+}
+
+@media screen and (min-width: 1024px) {
+	.contact-container{ width: 30%; margin-left: 1%; margin-top: 1.333%;}
+
+}
